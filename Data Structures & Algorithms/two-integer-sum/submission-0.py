@@ -1,11 +1,10 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        # nums = [3,4,5,6], target = 7
-        # Output: [0,1]
-        val_index = {}
+        visited = {}
         for i, num in enumerate(nums):
-            if target - num in val_index:
-                return [val_index[target-num],i]
-            val_index[num] = i
+            second_num = target - num # 7-4=3
+            if second_num in visited:
+                return [visited[second_num], i]
+            visited[num] = i
         
-        
+        return []
